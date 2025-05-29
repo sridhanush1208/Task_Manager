@@ -1,35 +1,104 @@
+/* main.css */
+
 body, html {
     margin: 0;
-    font-family: sans-serif;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
 }
 
 .content {
-    margin: 0 auto;
-    width: 400px;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-table, td, th {
-    border: 1px solid #aaa;
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h4 {
+    text-align: center;
+    color: #666;
 }
 
 table {
     border-collapse: collapse;
     width: 100%;
-}
-
-th {
-    height: 30px;
-}
-
-td {
-    text-align: center;
-    padding: 5px;
-}
-
-.form {
     margin-top: 20px;
 }
 
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background-color: #f1f1f1;
+    color: #555;
+    font-weight: bold;
+}
+
+td a {
+    color: #007BFF;
+    text-decoration: none;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+.form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 #content {
-    width: 70%;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    padding: 10px 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 600px) {
+    .content {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    #content {
+        width: 100%;
+    }
 }
