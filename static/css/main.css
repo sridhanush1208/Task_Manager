@@ -1,104 +1,170 @@
-/* main.css */
-
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f7f6; 
+    color: #333; 
+    line-height: 1.6;
 }
 
 .content {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: #ffffff;
+    margin: 30px auto; 
+    width: 90%; /* Responsive width */
+    max-width: 700px; /* Max width for larger screens */
+    background-color: #ffffff; /* White background for the content box */
     padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Headings */
 h1 {
+    color: #2c3e50; /* Darker blue for headings */
     text-align: center;
-    color: #333;
+    margin-bottom: 25px;
+    font-size: 2.5em; /* Larger heading */
 }
 
 h4 {
+    color: #7f8c8d; /* Softer color for placeholder text */
     text-align: center;
-    color: #666;
+    margin-top: 30px;
+    font-style: italic;
 }
 
+/* Table Styling */
 table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Light shadow for table */
+    border-radius: 6px; /* Rounded corners for table */
+    overflow: hidden; /* Ensures border-radius clips inner elements */
 }
 
 th, td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
+    border: none; /* Remove individual cell borders */
+    padding: 15px; /* Increased padding */
+    text-align: left; /* Align text to the left for readability */
 }
 
 th {
-    background-color: #f1f1f1;
-    color: #555;
+    background-color: #3498db; /* Blue header for table */
+    color: white;
     font-weight: bold;
+    text-transform: uppercase; /* Uppercase header text */
+    letter-spacing: 0.05em;
 }
 
+/* Alternating Row Colors for better readability */
+tr:nth-child(even) {
+    background-color: #ecf0f1; /* Light grey for even rows */
+}
+
+tr:hover {
+    background-color: #d4e6f1; /* Highlight row on hover */
+}
+
+td {
+    color: #555;
+}
+
+/* Action Links Styling */
 td a {
-    color: #007BFF;
+    color: #2980b9; /* Blue for links */
     text-decoration: none;
-    margin: 0 5px;
-    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    margin-right: 5px; /* Space between links */
+    border: 1px solid transparent; /* Prepare for bordered look on hover */
 }
 
 td a:hover {
-    text-decoration: underline;
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
 }
 
+td a.delete-link:hover { /* Specific hover for delete if needed */
+    background-color: #e74c3c; /* Red for delete hover */
+    color: white;
+}
+
+/* Form Styling */
 .form {
     margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Slightly different background for form area */
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 #content {
-    flex: 1;
-    padding: 10px;
+    width: calc(100% - 110px); /* Calculate width to fit button */
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-right: 10px; /* Space between input and button */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#content:focus {
+    border-color: #3498db; /* Highlight focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
 input[type="submit"] {
-    padding: 10px 16px;
-    background-color: #28a745;
+    background-color: #2ecc71; /* Green for add button */
     color: white;
     border: none;
-    border-radius: 6px;
+    padding: 10px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 input[type="submit"]:hover {
-    background-color: #218838;
+    background-color: #27ae60; /* Darker green on hover */
 }
 
+/* Responsive Adjustments (Simple Example) */
 @media (max-width: 600px) {
     .content {
-        width: 90%;
+        width: 95%;
+        margin: 15px auto;
         padding: 20px;
     }
 
-    .form {
-        flex-direction: column;
+    h1 {
+        font-size: 2em;
     }
 
-    input[type="submit"] {
-        width: 100%;
+    th, td {
+        padding: 10px;
     }
 
     #content {
-        width: 100%;
+        width: calc(100% - 100px); /* Adjust for smaller screens */
+    }
+
+    input[type="submit"] {
+        padding: 10px 15px;
+    }
+
+    /* Stack action links vertically on small screens if needed */
+    td a {
+        display: block;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    td a:last-child {
+        margin-bottom: 0;
     }
 }
